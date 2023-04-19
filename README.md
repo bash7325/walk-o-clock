@@ -1,1 +1,1 @@
-# walk-o-clock
+Corey and Alex are very particular developers. The office goes on a walk every day at 3pm to get some much needed excersise and fresh air after a long day of coding. This app is to help Corey or Alex determine whether the weather meets their criteria for walking.
