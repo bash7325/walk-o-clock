@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk-O-Clock?</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Walk-O-Clock?</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Who are you?</h2>
+            <select id="user">
+                <option value="default">Select a user</option>
+                <option value="user1">Corey</option>
+                <option value="user2">Alex</option>
+                <option value="user3">Not a weather wimp</option>
+            </select>
+        </section>
+        <section id="weather-results" style="display:none;">
+            <h2>Weather Results</h2>
+            <p id="weather-description"></p>
+            <p id="temperature"></p>
+            <p id="walk-recommendation"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Walk-O-Clock. All rights reserved.</p>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
