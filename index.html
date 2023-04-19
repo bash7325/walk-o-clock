@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walk-O-Clock?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
-    <link rel="stylesheet" href="./style.css">
+    <!-- add the google font Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <!-- Add NES.css CDN link -->
+    <link rel="stylesheet" href="https://unpkg.com/nes.css/css/nes.min.css">
 </head>
+
 <body>
     <header>
-        <h1>Walk-O-Clock?</h1>
+        <h1 class="nes-container">Walk-O-Clock?</h1>
     </header>
     <main>
-        <h2>Who are you?</h2>
-        <section>
-            <select id="user">
-                <option value="default">Select a user</option>
-                <option value="user1">Corey</option>
-                <option value="user2">Alex</option>
-                <option value="user3">Not a weather wimp</option>
+        <h1 for="error_select">Who are you?</h1>
+        <div class="nes-select is-error">
+            <select required id="error_select">
+                <option value="" disabled selected hidden>Select...</option>
+                <option value="0">Corey</option>
+                <option value="1">Alex</option>
+                <option value="2">Not a weather wimp</option>
             </select>
-        </section>
-        <section id="weather-results" style="display:none;">
+        </div>
+        <section id="weather-results" style="display:none;" class="nes-container">
             <h2>Weather Results</h2>
             <p id="weather-description"></p>
             <p id="temperature"></p>
@@ -30,9 +34,10 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Walk-O-Clock. All rights reserved.</p>
+        <p class="nes-container">&copy; 2023 Walk-O-Clock. All rights reserved.</p>
     </footer>
 
-    <script src="./index.js"></script>
+    <script src="./assets/index.js"></script>
 </body>
+
 </html>
