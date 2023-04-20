@@ -43,7 +43,7 @@ button {
 }
 
 #weather-results {
-
+margin-top: .5rem;
 }
 
 footer {
@@ -57,3 +57,4 @@ footer {
     text-align: center;
     padding-top: 5px;
 }
+

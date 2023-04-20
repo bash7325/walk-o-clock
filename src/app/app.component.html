@@ -15,12 +15,12 @@
     <button id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
   </div>
   <section *ngIf="weatherData" id="weather-results" class="nes-container">
-    <h2>Weather Results</h2>
+    <h2>Current Weather</h2>
     <p id="weather-description">{{ weatherData.weather[0].description }}</p>
-    <p id="temperature">Temperature: {{ weatherData.main.temp }}&deg;C</p>
+    <p id="temperature">Temperature: {{ weatherData.main.temp }}&deg;F</p>
     <p id="walk-recommendation"></p>
   </section>
 </main>
 <footer>
-  <p class="nes-container">&copy; 2023 Walk-O-Clock. All rights reserved.</p>
+  <p class="nes-container">&copy; 2023 Walk-O-Clock. All rights reserved, especially Spencer's rights.</p>
 </footer>

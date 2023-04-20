@@ -21,17 +21,24 @@ export class AppComponent {
       alert('Please select a user.');
       return;
     }
-
-    // Add your desired city name or coordinates
-    const city = 'London';
-    const requestUrl = `${this.apiUrl}?q=${city}&appid=${this.apiKey}&units=metric`;
-
-    this.http.get(requestUrl).subscribe(data => {
-      this.weatherData = data;
-      console.log(this.weatherData);
-    }, error => {
-      console.error('Error fetching weather data:', error);
-    });
+  
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const requestUrl = `${this.apiUrl}?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}&units=imperial`;
+  
+        this.http.get(requestUrl).subscribe(data => {
+          this.weatherData = data;
+          console.log(this.weatherData);
+        }, error => {
+          console.error('Error fetching weather data:', error);
+        });
+      }, (error) => {
+        console.error('Error getting user location:', error);
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
   }
 }
-
