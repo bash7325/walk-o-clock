@@ -1,0 +1,26 @@
+<header>
+  <h1 class="nes-container">Walk-O-Clock?</h1>
+</header>
+<main>
+  <h1 for="error_select">Who are you?</h1>
+  <div class="nes-select is-error">
+      <select required id="error_select">
+          <option value="" disabled selected hidden>Select...</option>
+          <option value="0">Corey</option>
+          <option value="1">Alex</option>
+          <option value="2">Not a weather wimp</option>
+      </select>
+  </div>
+  <div class="button-container">
+      <button id="submit" class="nes-btn is-primary">Submit</button>
+  </div>
+  <section id="weather-results" style="display:none;" class="nes-container">
+      <h2>Weather Results</h2>
+      <p id="weather-description"></p>
+      <p id="temperature"></p>
+      <p id="walk-recommendation"></p>
+  </section>
+</main>
+<footer>
+  <p class="nes-container">&copy; 2023 Walk-O-Clock. All rights reserved.</p>
+</footer>
