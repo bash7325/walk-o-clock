@@ -1,3 +1,5 @@
+/* Default styles */
+
 body {
     font-family: 'Press Start 2P', cursive;
     line-height: 1.6;
@@ -43,11 +45,14 @@ button {
 }
 
 #weather-results {
-margin-top: .5rem;
+    margin-top: .5rem;
+}
+
+#recommendation-result {
+    margin-top: .5rem;
 }
 
 footer {
-
     text-align: center;
     padding: 1rem;
     margin-top: 1rem;
@@ -58,3 +63,38 @@ footer {
     padding-top: 5px;
 }
 
+/* Media queries for larger screens */
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  label,
+  input,
+  button {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+
+  #weather-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #weather-description,
+  #temperature {
+    flex-basis: 50%;
+  }
+
+  #walk-recommendation {
+    flex-basis: 100%;
+  }
+}

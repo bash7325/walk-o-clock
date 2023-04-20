@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Walk-O-Clock?';
   selectedUser: string = '';
   weatherData: any;
+  recommendation: string = '';
 
   private apiKey: string = '20d3501773a839af3857d2b0374101f6';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
@@ -31,6 +32,17 @@ export class AppComponent {
         this.http.get(requestUrl).subscribe(data => {
           this.weatherData = data;
           console.log(this.weatherData);
+  
+          // Set the recommendation message based on the user and weather criteria
+          if (this.selectedUser === 'Alex' && this.weatherData.main.temp >= 60 && this.weatherData.main.temp <= 79) {
+            this.recommendation = "It's Walk-O-Clock!";
+          } else if (this.selectedUser === 'Corey' && this.weatherData.main.temp >= 70 && this.weatherData.main.temp <= 79) {
+            this.recommendation = "Get up Corey, It's Walk-O-Clock!";
+          } else if (this.selectedUser === 'Not a weather wimp') {
+            this.recommendation = "It's always Walk-O-Clock!";
+          } else {
+            this.recommendation = "It's Walk-O-Clock";
+          }
         }, error => {
           console.error('Error fetching weather data:', error);
         });

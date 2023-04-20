@@ -6,9 +6,9 @@
   <div class="nes-select is-error">
     <select required id="error_select" [(ngModel)]="selectedUser" name="selectedUser">
       <option value="" disabled selected hidden>Select...</option>
-      <option value="0">Corey</option>
-      <option value="1">Alex</option>
-      <option value="2">Not a weather wimp</option>
+      <option value="Corey">Corey</option>
+      <option value="ALex">Alex</option>
+      <option value="Not a weather wimp">Not a weather wimp</option>
     </select>
   </div>
   <div class="button-container">
@@ -18,7 +18,9 @@
     <h2>Current Weather</h2>
     <p id="weather-description">{{ weatherData.weather[0].description }}</p>
     <p id="temperature">Temp: {{ weatherData.main.temp }}&deg;F</p>
-    <p id="walk-recommendation"></p>
+  </section>
+  <section *ngIf="weatherData" id="recommendation-result" class="nes-container">
+    <p id="walk-recommendation">{{ recommendation }}</p>
   </section>
 </main>
 <footer>
