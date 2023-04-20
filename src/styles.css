@@ -52,6 +52,10 @@ button {
     margin-top: .5rem;
 }
 
+#weather-icon {
+  padding-left: .5rem;
+}
+
 footer {
     text-align: center;
     padding: 1rem;

@@ -11,6 +11,7 @@ export class AppComponent {
   selectedUser: string = '';
   weatherData: any;
   recommendation: string = '';
+  icon: string = '';
 
   private apiKey: string = '20d3501773a839af3857d2b0374101f6';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
@@ -41,7 +42,10 @@ export class AppComponent {
           } else if (this.selectedUser === 'Not a weather wimp') {
             this.recommendation = "It's always Walk-O-Clock!";
           } else {
-            this.recommendation = "It's Walk-O-Clock";
+            this.recommendation = "It's NOT Walk-O-Clock";
+          }
+          if (this.weatherData.weather[0].description === 'broken clouds') {
+            this.icon = '../assets/icons/icons8-cloud-32.png';
           }
         }, error => {
           console.error('Error fetching weather data:', error);
