@@ -4,21 +4,21 @@
 <main>
   <h1 for="error_select">Who are you?</h1>
   <div class="nes-select is-error">
-      <select required id="error_select">
-          <option value="" disabled selected hidden>Select...</option>
-          <option value="0">Corey</option>
-          <option value="1">Alex</option>
-          <option value="2">Not a weather wimp</option>
-      </select>
+    <select required id="error_select" [(ngModel)]="selectedUser" name="selectedUser">
+      <option value="" disabled selected hidden>Select...</option>
+      <option value="0">Corey</option>
+      <option value="1">Alex</option>
+      <option value="2">Not a weather wimp</option>
+    </select>
   </div>
   <div class="button-container">
-      <button id="submit" class="nes-btn is-primary">Submit</button>
+    <button id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
   </div>
-  <section id="weather-results" style="display:none;" class="nes-container">
-      <h2>Weather Results</h2>
-      <p id="weather-description"></p>
-      <p id="temperature"></p>
-      <p id="walk-recommendation"></p>
+  <section *ngIf="weatherData" id="weather-results" class="nes-container">
+    <h2>Weather Results</h2>
+    <p id="weather-description">{{ weatherData.weather[0].description }}</p>
+    <p id="temperature">Temperature: {{ weatherData.main.temp }}&deg;C</p>
+    <p id="walk-recommendation"></p>
   </section>
 </main>
 <footer>
