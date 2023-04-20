@@ -52,7 +52,7 @@ button {
     margin-top: .5rem;
 }
 
-#weather-icon {
+#weather-icon, #walkIcon {
   padding-left: .5rem;
 }
 

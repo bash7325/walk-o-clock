@@ -16,11 +16,11 @@
   </div>
   <section *ngIf="weatherData" id="weather-results" class="nes-container">
     <h2>Current Weather</h2>
-    <p id="weather-description"><span>{{ weatherData.weather[0].description }}</span><img id="weather-icon" src="{{ icon }}" alt="Weather Icon"></p>
+    <p id="weather-description"><span>{{ weatherData.weather[0].description }}</span><img id="weather-icon" src="{{ weatherIcon }}" alt="Weather Icon"></p>
     <p id="temperature">Temp: {{ weatherData.main.temp }}&deg;F</p>
   </section>
   <section *ngIf="weatherData" id="recommendation-result" class="nes-container">
-    <p id="walk-recommendation">{{ recommendation }}</p>
+    <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>
   </section>
 </main>
 <footer>
