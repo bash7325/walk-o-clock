@@ -13,6 +13,7 @@ export class AppComponent {
   recommendation: string = '';
   weatherIcon: string = '';
   walkIcon: string = '';
+  currentMood: string = '';
 
   private apiKey: string = '20d3501773a839af3857d2b0374101f6';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
