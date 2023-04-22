@@ -19,8 +19,8 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {}
 
-  isWalkOClockForAlex(temp: number): boolean {
-    return temp >= 60 && temp <= 79;
+  isWalkOClockForAlex(temp: number, windSpeed: number): boolean {
+    return temp >= 60 && temp <= 79 && windSpeed < 10;
   }
   
   isWalkOClockForCorey(temp: number, windSpeed: number): boolean {
@@ -37,7 +37,7 @@ export class AppComponent {
     const windSpeed = this.weatherData.wind.speed;
   
     if (this.selectedUser === 'Alex') {
-      return this.isWalkOClockForAlex(temp);
+      return this.isWalkOClockForAlex(temp, windSpeed);
     } else if (this.selectedUser === 'Corey') {
       return this.isWalkOClockForCorey(temp, windSpeed);
     } else if (this.selectedUser === 'Not a weather wimp') {
@@ -58,6 +58,10 @@ export class AppComponent {
       return 'assets/icons/icons8-haze-32.png';
     } else if (description.includes('storm')) {
       return 'assets/icons/icons8-storm-32.png';
+    }  else if (description.includes('snow')) {
+      return 'assets/icons/icons8-snow-32.png';
+    } else if (description.includes('sun')) {
+      return 'assets/icons/icons8-haze-32.png';
     }
     return '';
   }
