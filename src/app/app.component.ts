@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,61 +14,89 @@ export class AppComponent {
   weatherIcon: string = '';
   walkIcon: string = '';
 
-
   private apiKey: string = '20d3501773a839af3857d2b0374101f6';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
 
-  getWeather() {
+  isWalkOClockForAlex(temp: number): boolean {
+    return temp >= 60 && temp <= 79;
+  }
+  
+  isWalkOClockForCorey(temp: number, windSpeed: number): boolean {
+    return temp >= 70 && temp <= 79 && windSpeed < 10;
+  }
+  
+  
+  isWalkOClockForNotAWeatherWimp(): boolean {
+    return true;
+  }
+  
+  isWalkOClock() {
+    const temp = this.weatherData.main.temp;
+    const windSpeed = this.weatherData.wind.speed;
+  
+    if (this.selectedUser === 'Alex') {
+      return this.isWalkOClockForAlex(temp);
+    } else if (this.selectedUser === 'Corey') {
+      return this.isWalkOClockForCorey(temp, windSpeed);
+    } else if (this.selectedUser === 'Not a weather wimp') {
+      return this.isWalkOClockForNotAWeatherWimp();
+    }
+    return false;
+  }
+  
+
+  getWeatherIcon() {
+    const description = this.weatherData.weather[0].description;
+
+    if (description.includes('clouds')) {
+      return 'assets/icons/icons8-cloud-32.png';
+    } else if (description.includes('rain')) {
+      return 'assets/icons/icons8-rain-32.png';
+    } else if (description.includes('haze')) {
+      return 'assets/icons/icons8-haze-32.png';
+    } else if (description.includes('storm')) {
+      return 'assets/icons/icons8-storm-32.png';
+    }
+    return '';
+  }
+
+  getUserLocation() {
+    return new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+      } else {
+        reject(new Error("Geolocation is not supported by this browser."));
+      }
+    });
+  }
+
+  async getWeather() {
     if (!this.selectedUser) {
       alert('Please select a user.');
       return;
     }
-  
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        const requestUrl = `${this.apiUrl}?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}&units=imperial`;
-  
-        this.http.get(requestUrl).subscribe(data => {
-          this.weatherData = data;
-          console.log(this.weatherData);
-  
-          if (this.selectedUser === 'Alex' && this.weatherData.main.temp >= 60 && this.weatherData.main.temp <= 79) {
-            this.recommendation = "It's Walk-O-Clock!";
-            this.walkIcon = 'assets/icons/icons8-walking-64.png'
-          } else if (this.selectedUser === 'Corey' && this.weatherData.main.temp >= 70 && this.weatherData.main.temp <= 79) {
-            this.recommendation = "Get up Corey, It's Walk-O-Clock!";
-            this.walkIcon = 'assets/icons/icons8-walking-64.png'
-          } else if (this.selectedUser === 'Not a weather wimp') {
-            this.recommendation = "It's always Walk-O-Clock!";
-            this.walkIcon = 'assets/icons/icons8-walking-64.png'
-          } else {
-            this.recommendation = "It's NOT Walk-O-Clock";
-            this.walkIcon = 'assets/icons/icons8-armchair-64.png'
-          }
-          if (this.weatherData.weather[0].description.includes('clouds')) {
-            this.weatherIcon = 'assets/icons/icons8-cloud-32.png';
-          }
-          if (this.weatherData.weather[0].description.includes('rain')) {
-            this.weatherIcon = 'assets/icons/icons8-rain-32.png';
-          }
-          if (this.weatherData.weather[0].description.includes('haze')) {
-            this.weatherIcon = 'assets/icons/icons8-haze-32.png';
-          }
-          if (this.weatherData.weather[0].description.includes('storm')) {
-            this.weatherIcon = 'assets/icons/icons8-storm-32.png';
-          }
-        }, error => {
-          console.error('Error fetching weather data:', error);
-        });
-      }, (error) => {
-        console.error('Error getting user location:', error);
+
+    try {
+      const position: any = await this.getUserLocation();
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      const requestUrl = `${this.apiUrl}?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}&units=imperial`;
+
+      this.http.get(requestUrl).subscribe(data => {
+        this.weatherData = data;
+        console.log(this.weatherData);
+
+        this.recommendation = this.isWalkOClock() ? "It's Walk-O-Clock!" : "It's NOT Walk-O-Clock";
+        this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-64.png' : 'assets/icons/icons8-armchair-64.png';
+        this.weatherIcon = this.getWeatherIcon();
+      }, error => {
+        console.error('Error fetching weather data:', error);
       });
-    } else {
-      alert("Geolocation is not supported by this browser.");
+    } catch (error) {
+      console.error('Error getting user location:', error as Error);
+      alert((error as Error).message);
     }
   }
 }
