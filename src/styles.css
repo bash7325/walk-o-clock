@@ -16,12 +16,25 @@ header h1 {
     margin: 0;
 }
 
+h1 {
+    font-size: inherit !important;
+    margin-bottom: 0px !important;
+}
+
 h1,h2 {
     text-align: center;
 }
 
 main {
     padding: 2rem;
+}
+
+p {
+  font-size: smaller;
+}
+
+h1.nes-container {
+  border-color: #22c425 !important;
 }
 
 label,
@@ -54,6 +67,10 @@ button {
 
 #weather-icon, #walkIcon {
   padding-left: .5rem;
+}
+
+#thermometer {
+  width: 32px;
 }
 
 footer {

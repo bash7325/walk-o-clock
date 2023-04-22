@@ -33,7 +33,7 @@ export class AppComponent {
   }
   
   isWalkOClock() {
-    const temp = this.weatherData.main.temp;
+    const temp = Math.round(this.weatherData.main.temp);
     const windSpeed = this.weatherData.wind.speed;
   
     if (this.selectedUser === 'Alex') {
