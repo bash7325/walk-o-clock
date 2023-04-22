@@ -24,8 +24,16 @@ export class AppComponent {
     return temp >= 60 && temp <= 79 && windSpeed < 10;
   }
   
-  isWalkOClockForCorey(temp: number, windSpeed: number): boolean {
-    return temp >= 70 && temp <= 79 && windSpeed < 10;
+  isWalkOClockForCorey(temp: number, windSpeed: number, mood: string): boolean {
+    if (mood === 'happy') {
+      return temp >= 70 && temp <= 79 && windSpeed < 10;
+    } else if (mood === 'sad') {
+      return temp >= 65 && temp <= 79 && windSpeed < 10;
+    } else if (mood === 'sheldonYelled') {
+      return temp >= 75 && temp <= 79 && windSpeed < 5;
+    } else { //this is the neatral mood logic
+      return temp >= 68 && temp <= 79 && windSpeed < 10;
+    }
   }
   
   
@@ -36,11 +44,11 @@ export class AppComponent {
   isWalkOClock() {
     const temp = Math.round(this.weatherData.main.temp);
     const windSpeed = this.weatherData.wind.speed;
-  
+
     if (this.selectedUser === 'Alex') {
       return this.isWalkOClockForAlex(temp, windSpeed);
     } else if (this.selectedUser === 'Corey') {
-      return this.isWalkOClockForCorey(temp, windSpeed);
+      return this.isWalkOClockForCorey(temp, windSpeed, this.currentMood);
     } else if (this.selectedUser === 'Not a weather wimp') {
       return this.isWalkOClockForNotAWeatherWimp();
     }
