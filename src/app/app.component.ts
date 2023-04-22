@@ -89,7 +89,7 @@ export class AppComponent {
         console.log(this.weatherData);
 
         this.recommendation = this.isWalkOClock() ? "It's Walk-O-Clock!" : "It's NOT Walk-O-Clock";
-        this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-64.png' : 'assets/icons/icons8-armchair-64.png';
+        this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
       }, error => {
         console.error('Error fetching weather data:', error);

@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

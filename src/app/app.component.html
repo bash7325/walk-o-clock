@@ -16,14 +16,14 @@
   </div>
   <section *ngIf="weatherData" id="weather-results" class="nes-container">
     <h2>Current Weather</h2>
-    <p id="weather-description"><span>{{ weatherData.weather[0].description }}</span><img id="weather-icon" src="{{ weatherIcon }}" alt="Weather Icon"></p>
+    <p id="weather-description"><span>{{ weatherData.weather[0].description | capitalize }}</span><img id="weather-icon" src="{{ weatherIcon }}" alt="Weather"></p>
     <p id="temperature"><span>{{ weatherData.main.temp | number:'1.0-0' }}&deg;F</span><img id="thermometer" src="assets/icons/thermo2.png" alt="Thermometer"></p>
-    <p id="temperature">Wind: {{ weatherData.wind.speed }} Mph</p>
+    <p id="temperature">Wind: {{ weatherData.wind.speed | number:'1.0-0' }} Mph</p>
   </section>
   <section *ngIf="weatherData" id="recommendation-result" class="nes-container">
     <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>
   </section>
 </main>
 <footer>
-  <p class="nes-container">&copy; 2023 Walk-O-Clock. All rights reserved, especially Spencer's.</p>
+  <p class="nes-container" id="footer">&copy; 2023 Walk-O-Clock. All rights reserved, especially Spencer's.</p>
 </footer>

@@ -26,7 +26,7 @@ h1,h2 {
 }
 
 main {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 p {
@@ -59,10 +59,12 @@ button {
 
 #weather-results {
     margin-top: .5rem;
+    border-color: purple;
 }
 
 #recommendation-result {
     margin-top: .5rem;
+    border-color: orange;
 }
 
 #weather-icon, #walkIcon {
@@ -71,6 +73,10 @@ button {
 
 #thermometer {
   width: 32px;
+}
+
+#footer {
+  border-color: blue;
 }
 
 footer {
