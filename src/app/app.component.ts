@@ -34,7 +34,7 @@ export class AppComponent {
       return false;
     }else if(temp >= 95){
       return false;
-    }else if (description.includes('rain')){
+    }else if (description.toLowerCase().includes('rain')){
       return false;
     }
     else{
