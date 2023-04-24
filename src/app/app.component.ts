@@ -71,6 +71,8 @@ export class AppComponent {
       return 'assets/icons/icons8-snow-32.png';
     } else if (description.includes('sun')) {
       return 'assets/icons/icons8-haze-32.png';
+    } else if (description.includes('clear sky')) {
+      return 'assets/icons/icons8-haze-32.png';
     }
     return '';
   }
@@ -88,6 +90,11 @@ export class AppComponent {
   async getWeather() {
     if (!this.selectedUser) {
       alert('Please select a user.');
+      return;
+    }
+
+    if (this.selectedUser === 'Corey' && !this.currentMood) {
+      alert('Please select a mood.');
       return;
     }
 
