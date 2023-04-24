@@ -114,7 +114,7 @@ export class AppComponent {
   
     if (this.selectedUser === 'Corey' && !this.currentMood) {
       this.alertTitle = 'Error';
-      this.alertMessage = 'Please select a mood.';
+      this.alertMessage = 'Please select a Corey mood.';
       this.showAlert = true;
       return;
     }
