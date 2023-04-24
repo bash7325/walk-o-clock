@@ -42,15 +42,17 @@ export class AppComponent {
     }
   }
   
-  isWalkOClockForCorey(temp: number, windSpeed: number, mood: string): boolean {
+  isWalkOClockForCorey(temp: number, description: string, mood: string): boolean {
     if (mood === 'happy') {
-      return temp >= 70 && temp <= 79 && windSpeed < 10;
+      return temp >= 60 && temp <= 79;
     } else if (mood === 'sad') {
-      return temp >= 65 && temp <= 79 && windSpeed < 10;
+      return temp >= 70 && temp <= 79;
     } else if (mood === 'sheldonYelled') {
-      return temp >= 75 && temp <= 79 && windSpeed < 5;
+      return temp >= 70 && temp <= 79;
+    }else if (description.includes('light rain')){
+      return false;
     } else { //this is the neatral mood logic
-      return temp >= 68 && temp <= 79 && windSpeed < 10;
+      return temp >= 68 && temp <= 79;
     }
   }
   
