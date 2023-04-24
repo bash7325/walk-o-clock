@@ -23,13 +23,26 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {}
 
+
+  isWalkOClockForAlex(temp: number, windSpeed: number, description: string): boolean {
+    if(temp < 45){
+      return false;
+    }else if(temp >= 45 && temp < 65 && windSpeed >= 10){
+      return false;
+    }else if(temp >= 95){
+      return false;
+    }else if (description === 'rain'){
+      return false;
+    }
+    else{
+      return true;
+    }
+
   hideAlertModal() {
     this.showAlert = false;
   }
 
-  isWalkOClockForAlex(temp: number, windSpeed: number): boolean {
-    return temp >= 60 && temp <= 79 && windSpeed < 10;
-  }
+
   
   isWalkOClockForCorey(temp: number, windSpeed: number, mood: string): boolean {
     if (mood === 'happy') {
@@ -51,9 +64,10 @@ export class AppComponent {
   isWalkOClock() {
     const temp = Math.round(this.weatherData.main.temp);
     const windSpeed = this.weatherData.wind.speed;
+    const description = this.weatherData.weather[0].description;
 
     if (this.selectedUser === 'Alex') {
-      return this.isWalkOClockForAlex(temp, windSpeed);
+      return this.isWalkOClockForAlex(temp, windSpeed,description);
     } else if (this.selectedUser === 'Corey') {
       return this.isWalkOClockForCorey(temp, windSpeed, this.currentMood);
     } else if (this.selectedUser === 'Not a weather wimp') {
