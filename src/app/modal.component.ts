@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       <div class="modal">
         <h2>{{ title }}</h2>
         <p>{{ message }}</p>
-        <button class="nes-btn is-error text-center" (click)="hideModal()">Close</button>
+        <button class="nes-btn is-error" (click)="hideModal()">Close</button>
       </div>
     </div>
   `,
