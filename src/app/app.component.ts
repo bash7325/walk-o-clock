@@ -14,11 +14,15 @@ export class AppComponent {
   weatherIcon: string = '';
   walkIcon: string = '';
   currentMood: string = '';
+  alertTitle: string = '';
+  alertMessage: string = '';
+  showAlert = false;
 
   private apiKey: string = '20d3501773a839af3857d2b0374101f6';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
+
 
   isWalkOClockForAlex(temp: number, windSpeed: number, description: string): boolean {
     if(temp < 45){
@@ -33,7 +37,12 @@ export class AppComponent {
     else{
       return true;
     }
+
+  hideAlertModal() {
+    this.showAlert = false;
   }
+
+
   
   isWalkOClockForCorey(temp: number, windSpeed: number, mood: string): boolean {
     if (mood === 'happy') {
@@ -83,6 +92,8 @@ export class AppComponent {
       return 'assets/icons/icons8-snow-32.png';
     } else if (description.includes('sun')) {
       return 'assets/icons/icons8-haze-32.png';
+    } else if (description.includes('clear sky')) {
+      return 'assets/icons/icons8-haze-32.png';
     }
     return '';
   }
@@ -99,7 +110,16 @@ export class AppComponent {
 
   async getWeather() {
     if (!this.selectedUser) {
-      alert('Please select a user.');
+      this.alertTitle = 'Error';
+      this.alertMessage = 'Please select a user.';
+      this.showAlert = true;
+      return;
+    }
+  
+    if (this.selectedUser === 'Corey' && !this.currentMood) {
+      this.alertTitle = 'Error';
+      this.alertMessage = 'Please select a mood.';
+      this.showAlert = true;
       return;
     }
 
