@@ -18,11 +18,14 @@ export class AppComponent {
   alertMessage: string = '';
   showAlert = false;
 
+  hideAlertModal() {
+    this.showAlert = false;
+  }
+
   private apiKey: string = '20d3501773a839af3857d2b0374101f6';
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
-
 
   isWalkOClockForAlex(temp: number, windSpeed: number, description: string): boolean {
     if(temp < 45){
@@ -31,18 +34,13 @@ export class AppComponent {
       return false;
     }else if(temp >= 95){
       return false;
-    }else if (description === 'rain'){
+    }else if (description.includes('rain')){
       return false;
     }
     else{
       return true;
     }
-
-  hideAlertModal() {
-    this.showAlert = false;
   }
-
-
   
   isWalkOClockForCorey(temp: number, windSpeed: number, mood: string): boolean {
     if (mood === 'happy') {
@@ -55,7 +53,6 @@ export class AppComponent {
       return temp >= 68 && temp <= 79 && windSpeed < 10;
     }
   }
-  
   
   isWalkOClockForNotAWeatherWimp(): boolean {
     return true;
@@ -76,7 +73,6 @@ export class AppComponent {
     return false;
   }
   
-
   getWeatherIcon() {
     const description = this.weatherData.weather[0].description;
 
