@@ -34,7 +34,7 @@ export class AppComponent {
       return false;
     }else if(temp >= 95){
       return false;
-    }else if (description.includes('rain')){
+    }else if (description.toLowerCase().includes('rain')){
       return false;
     }
     else{
@@ -116,7 +116,7 @@ export class AppComponent {
   
     if (this.selectedUser === 'Corey' && !this.currentMood) {
       this.alertTitle = 'Error';
-      this.alertMessage = 'Please select a mood.';
+      this.alertMessage = 'Please select a Corey mood.';
       this.showAlert = true;
       return;
     }
