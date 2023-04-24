@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { CapitalizePipe } from './capitalize.pipe';
+import { AlertModalComponent } from './modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    AlertModalComponent
   ],
   imports: [
     BrowserModule,

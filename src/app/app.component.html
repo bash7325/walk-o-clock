@@ -24,6 +24,9 @@
   <div class="button-container">
     <button id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
   </div>
+  
+  <app-alert-modal [title]="alertTitle" [message]="alertMessage" [show]="showAlert" (close)="hideAlertModal()"></app-alert-modal>
+
   <section *ngIf="weatherData" id="weather-results" class="nes-container">
     <h2>Current Weather</h2>
     <p id="weather-description"><span>{{ weatherData.weather[0].description | capitalize }}</span><img id="weather-icon" src="{{ weatherIcon }}" alt="Weather"></p>
