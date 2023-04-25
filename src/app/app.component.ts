@@ -49,7 +49,7 @@ export class AppComponent {
       return temp >= 70 && temp <= 79;
     } else if (mood === 'sheldonYelled') {
       return temp >= 70 && temp <= 79;
-    }else if (description.includes('light rain')){
+    }else if (description.includes('moderate rain') || description.includes('heavy rain')){
       return false;
     } else { //this is the neatral mood logic
       return temp >= 68 && temp <= 79;
