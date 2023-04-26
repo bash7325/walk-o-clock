@@ -79,9 +79,8 @@ button {
   border-color: blue;
 }
 
-#corey-mug {
+/* #corey-mug {
   display: block;
-  /* margin: 0 auto; */
   animation: bounce 5s linear infinite;
   width: 50px;
 }
@@ -96,7 +95,7 @@ button {
   100% {
     transform: translateX(0);
   }
-}
+} */
 
 footer {
     text-align: center;
