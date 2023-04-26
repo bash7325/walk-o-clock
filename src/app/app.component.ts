@@ -14,6 +14,7 @@ export class AppComponent {
   weatherIcon: string = '';
   walkIcon: string = '';
   currentMood: string = '';
+  rodeMotorcycle: string = '';
   alertTitle: string = '';
   alertMessage: string = '';
   showAlert = false;
@@ -38,6 +39,16 @@ export class AppComponent {
       return false;
     }
     else{
+      return true;
+    }
+  }
+  isWalkOClockForIan(temp: number, motorcycle: string): boolean {
+    temp = 96;
+    if(this.rodeMotorcycle === 'yes'){
+      return true;
+    }else if(temp < 45 || temp > 95){
+      return false;
+    }else{
       return true;
     }
   }
@@ -69,7 +80,9 @@ export class AppComponent {
       return this.isWalkOClockForAlex(temp, windSpeed,description);
     } else if (this.selectedUser === 'Corey') {
       return this.isWalkOClockForCorey(temp, windSpeed, this.currentMood);
-    } else if (this.selectedUser === 'Not a weather wimp') {
+    } else if(this.selectedUser === 'Ian'){
+      return this.isWalkOClockForIan(temp,this.rodeMotorcycle);
+    }else if (this.selectedUser === 'Not a weather wimp') {
       return this.isWalkOClockForNotAWeatherWimp();
     }
     return false;
@@ -117,6 +130,12 @@ export class AppComponent {
     if (this.selectedUser === 'Corey' && !this.currentMood) {
       this.alertTitle = 'Error';
       this.alertMessage = 'Please select a Corey mood.';
+      this.showAlert = true;
+      return;
+    }
+    if (this.selectedUser === 'Ian' && !this.rodeMotorcycle) {
+      this.alertTitle = 'Error';
+      this.alertMessage = 'Did Ian ride his motorcycle?';
       this.showAlert = true;
       return;
     }
