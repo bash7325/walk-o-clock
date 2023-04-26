@@ -8,6 +8,7 @@
       <option value="" disabled selected hidden>Select...</option>
       <option value="Corey">Corey</option>
       <option value="Alex">Alex</option>
+      <option value="Ian">Ian</option>
       <option value="Not a weather wimp">Not a weather wimp</option>
     </select>
   </div>
@@ -19,6 +20,14 @@
       <option value="neutral">Neutral</option>
       <option value="sad">Oh bother</option>
       <option value="sheldonYelled">Sheldon yelled at me</option>
+    </select>
+  </div>
+  <h1 *ngIf="selectedUser === 'Ian'" for="mood_select">Ride your Motorcycle??</h1>
+  <div *ngIf="selectedUser === 'Ian'" class="nes-select is-error">
+    <select required id="motorcycle_select" [(ngModel)]="rodeMotorcycle" name="rodeMotorcycle">
+      <option value="" disabled selected hidden>Select...</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
     </select>
   </div>
   <div class="button-container">
