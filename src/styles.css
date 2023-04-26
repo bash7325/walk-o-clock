@@ -91,7 +91,7 @@ button {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(250px);
+    transform: translateX(240px);
   }
   100% {
     transform: translateX(0);
