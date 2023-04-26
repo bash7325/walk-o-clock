@@ -79,10 +79,10 @@ button {
   border-color: blue;
 }
 
-/* #corey-mug {
+#corey-mug {
   display: block;
   animation: bounce 5s linear infinite;
-  width: 50px;
+  width: 100px;
 }
 
 @keyframes bounce {
@@ -90,12 +90,12 @@ button {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(240px);
+    transform: translateX(200px);
   }
   100% {
     transform: translateX(0);
   }
-} */
+}
 
 footer {
     text-align: center;
