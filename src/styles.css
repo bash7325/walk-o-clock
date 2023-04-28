@@ -99,6 +99,12 @@ button {
   width: 100px;
 }
 
+#ian-mug {
+  display: block;
+  animation: bounce 3s ease-in-out infinite;
+  width: 80px;
+}
+
 
 @keyframes bounceRotate {
   0% {
@@ -129,6 +135,16 @@ button {
     transform: translateX(0) scale(1);
   }
 }
+
+@keyframes bounce2 {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-100px) scaleY(1.2);
+  }
+}
+
 
 .button-container {
     text-align: center;
