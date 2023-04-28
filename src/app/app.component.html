@@ -42,6 +42,7 @@
     <p id="temperature"><span>Temp: {{ weatherData.main.temp | number:'1.0-0' }}&deg;F</span><img id="thermometer" src="assets/icons/thermo2.png" alt="Thermometer"></p>
     <p id="temperature">Wind: {{ weatherData.wind.speed | number:'1.0-0' }} Mph</p>
     <img *ngIf="selectedUser === 'Corey'" id="corey-mug" src="assets/images/pixel-corey.png">
+    <img *ngIf="selectedUser === 'Alex'" id="alex-mug" src="assets/images/pixel-alex.png">
   </section>
   <section *ngIf="weatherData" id="recommendation-result" class="nes-container">
     <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>

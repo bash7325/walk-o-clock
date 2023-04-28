@@ -82,20 +82,46 @@ button {
 #corey-mug {
   display: block;
   animation: bounce 5s linear infinite;
+  width: 80px;
+}
+
+#alex-mug {
+  display: block;
+  animation: bounceRotate 5s linear infinite;
   width: 100px;
+}
+
+
+@keyframes bounceRotate {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(200px) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
 }
 
 @keyframes bounce {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(100px) scale(1.1);
   }
   50% {
-    transform: translateX(200px);
+    transform: translateX(200px) scale(1);
+  }
+  75% {
+    transform: translateX(100px) scale(0.9);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
+
 
 footer {
     text-align: center;
