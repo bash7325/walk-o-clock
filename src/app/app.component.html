@@ -2,8 +2,8 @@
   <h1 class="nes-container">Walk-O-Clock?</h1>
 </header>
 <main>
-  <h1 for="error_select">Who are you?</h1>
-  <div class="nes-select is-error">
+  <h1 *ngIf="showDropdowns" for="error_select">Who are you?</h1>
+  <div *ngIf="showDropdowns" class="nes-select is-error">
     <select required id="error_select" [(ngModel)]="selectedUser" name="selectedUser">
       <option value="" disabled selected hidden>Select...</option>
       <option value="Corey">Corey</option>
@@ -12,8 +12,8 @@
       <option value="Not a weather wimp">Not a weather wimp</option>
     </select>
   </div>
-  <h1 *ngIf="selectedUser === 'Corey'" for="mood_select">How Ya Feeling??</h1>
-  <div *ngIf="selectedUser === 'Corey'" class="nes-select is-error">
+  <h1 *ngIf="showDropdowns && selectedUser === 'Corey'" for="mood_select">How Ya Feeling??</h1>
+  <div *ngIf="showDropdowns && selectedUser === 'Corey'" class="nes-select is-error">
     <select required id="mood_select" [(ngModel)]="currentMood" name="currentMood">
       <option value="" disabled selected hidden>Select...</option>
       <option value="happy">Happy</option>
@@ -22,8 +22,8 @@
       <option value="sheldonYelled">Sheldon yelled at me</option>
     </select>
   </div>
-  <h1 *ngIf="selectedUser === 'Ian'" for="mood_select">Ride your Motorcycle??</h1>
-  <div *ngIf="selectedUser === 'Ian'" class="nes-select is-error">
+  <h1 *ngIf="showDropdowns && selectedUser === 'Ian'" for="mood_select">Ride your Motorcycle??</h1>
+  <div *ngIf="showDropdowns && selectedUser === 'Ian'" class="nes-select is-error">
     <select required id="motorcycle_select" [(ngModel)]="rodeMotorcycle" name="rodeMotorcycle">
       <option value="" disabled selected hidden>Select...</option>
       <option value="yes">Yes</option>
@@ -31,7 +31,10 @@
     </select>
   </div>
   <div class="button-container">
-    <button id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
+    <button *ngIf="!showDropdowns" class="nes-btn is-warning" (click)="changeUser()">Change User</button>
+  </div>
+  <div class="button-container">
+    <button *ngIf="showDropdowns" id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
   </div>
   
   <app-alert-modal [title]="alertTitle" [message]="alertMessage" [show]="showAlert" (close)="hideAlertModal()"></app-alert-modal>
