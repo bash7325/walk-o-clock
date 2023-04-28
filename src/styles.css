@@ -75,6 +75,11 @@ button {
   width: 32px;
 }
 
+#wind {
+  width: 24px;
+  margin-left: .5rem;
+}
+
 #footer {
   border-color: blue;
   text-align: center;

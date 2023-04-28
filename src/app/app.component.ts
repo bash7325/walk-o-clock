@@ -111,9 +111,9 @@ export class AppComponent {
     }  else if (description.includes('snow')) {
       return 'assets/icons/icons8-snow-32.png';
     } else if (description.includes('sun')) {
-      return 'assets/icons/icons8-haze-32.png';
+      return 'assets/icons/sun32.png';
     } else if (description.includes('clear sky')) {
-      return 'assets/icons/icons8-haze-32.png';
+      return 'assets/icons/sun32.png';
     }
     return '';
   }
