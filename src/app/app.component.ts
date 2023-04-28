@@ -18,6 +18,7 @@ export class AppComponent {
   alertTitle: string = '';
   alertMessage: string = '';
   showAlert = false;
+  showDropdowns= true;
 
   hideAlertModal() {
     this.showAlert = false;
@@ -27,6 +28,14 @@ export class AppComponent {
   private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) {}
+
+  changeUser() {
+    this.showDropdowns = true;
+    this.selectedUser = '';
+    this.weatherData = null;
+    this.currentMood = '';
+    this.rodeMotorcycle = '';
+  }
 
   isWalkOClockForAlex(temp: number, windSpeed: number, description: string): boolean {
     if(temp < 45){
@@ -153,6 +162,7 @@ export class AppComponent {
         this.recommendation = this.isWalkOClock() ? "It's Walk-O-Clock!" : "It's NOT Walk-O-Clock";
         this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
+        this.showDropdowns = false;
       }, error => {
         console.error('Error fetching weather data:', error);
       });
