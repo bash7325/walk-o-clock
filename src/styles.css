@@ -140,6 +140,16 @@ footer {
   align-items: center;
 }
 
+#clock1 {
+  width: 35px;
+  padding-right: 7px;
+}
+
+#clock2 {
+  width: 35px;
+  padding-left: 5px;
+}
+
 
 /* Media queries for larger screens */
 
