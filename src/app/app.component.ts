@@ -19,6 +19,7 @@ export class AppComponent {
   alertMessage: string = '';
   showAlert = false;
   showDropdowns= true;
+  isLoading = false;
 
   hideAlertModal() {
     this.showAlert = false;
@@ -150,6 +151,7 @@ export class AppComponent {
     }
 
     try {
+      this.isLoading = true;
       const position: any = await this.getUserLocation();
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
@@ -163,12 +165,14 @@ export class AppComponent {
         this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
         this.showDropdowns = false;
+        this.isLoading = false;
       }, error => {
         console.error('Error fetching weather data:', error);
       });
     } catch (error) {
       console.error('Error getting user location:', error as Error);
       alert((error as Error).message);
+      this.isLoading = false;
     }
   }
 }

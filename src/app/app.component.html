@@ -2,6 +2,9 @@
   <h1 class="nes-container"><img id="clock1" src="assets/images/clock.png">Walk-O-Clock?<img id="clock2" src="assets/images/clock.png"></h1>
 </header>
 <main>
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loader"></div>
+  </div>  
   <h1 *ngIf="showDropdowns" for="error_select">Who are you?</h1>
   <div *ngIf="showDropdowns" class="nes-select is-error">
     <select required id="error_select" [(ngModel)]="selectedUser" name="selectedUser">
