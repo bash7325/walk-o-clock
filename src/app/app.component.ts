@@ -165,7 +165,9 @@ export class AppComponent {
         this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
         this.showDropdowns = false;
-        this.isLoading = false;
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 4000);
       }, error => {
         console.error('Error fetching weather data:', error);
       });

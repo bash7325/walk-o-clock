@@ -2,8 +2,9 @@
   <h1 class="nes-container"><img id="clock1" src="assets/images/clock.png">Walk-O-Clock?<img id="clock2" src="assets/images/clock.png"></h1>
 </header>
 <main>
-  <div *ngIf="isLoading" class="loading-container">
+  <div *ngIf="isLoading" class="loading-container nes-container">
     <div class="loader"></div>
+    <p id="loading-text">Loading...</p>
   </div>  
   <h1 *ngIf="showDropdowns" for="error_select">Who are you?</h1>
   <div *ngIf="showDropdowns" class="nes-select is-error">
@@ -34,7 +35,7 @@
     </select>
   </div>
   <div class="button-container">
-    <button *ngIf="!showDropdowns" class="nes-btn is-warning" (click)="changeUser()">Change User</button>
+    <button *ngIf="!showDropdowns && !isLoading" class="nes-btn is-warning" (click)="changeUser()">Change User</button>
   </div>
   <div class="button-container">
     <button *ngIf="showDropdowns" id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
@@ -42,6 +43,7 @@
   
   <app-alert-modal [title]="alertTitle" [message]="alertMessage" [show]="showAlert" (close)="hideAlertModal()"></app-alert-modal>
 
+  <div *ngIf="!isLoading">
   <section *ngIf="weatherData" id="weather-results" class="nes-container">
     <h2>Current Weather</h2>
     <p id="weather-description"><span>{{ weatherData.weather[0].description | capitalize }}</span><img id="weather-icon" src="{{ weatherIcon }}" alt="Weather"></p>
@@ -54,6 +56,7 @@
   <section *ngIf="weatherData" id="recommendation-result" class="nes-container">
     <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>
   </section>
+</div>
 </main>
 <footer class="nes-container" id="footer">
   <p >&copy; 2023 Walk-O-Clock</p>
