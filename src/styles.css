@@ -1,33 +1,33 @@
 /* Default styles */
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: "Press Start 2P", cursive;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 header {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 h1 {
-    font-size: inherit !important;
-    margin-bottom: 0px !important;
+  font-size: inherit !important;
+  margin-bottom: 0px !important;
 }
 
-h1,h2 {
-    text-align: center;
+h1,
+h2 {
+  text-align: center;
 }
 
 main {
-    padding: 1rem;
-    
+  padding: 1rem;
 }
 
 p {
@@ -41,35 +41,36 @@ h1.nes-container {
 label,
 input,
 button {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 input {
-    padding: 0.5rem;
-    font-size: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 button {
-    background-color: #35424a;
-    color: #ffffff;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
+  background-color: #35424a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 #weather-results {
-    margin-top: .5rem;
-    border-color: purple;
+  margin-top: 0.5rem;
+  border-color: purple;
 }
 
 #recommendation-result {
-    margin-top: .5rem;
-    border-color: orange;
+  margin-top: 0.5rem;
+  border-color: orange;
 }
 
-#weather-icon, #walkIcon {
-  padding-left: .5rem;
+#weather-icon,
+#walkIcon {
+  padding-left: 0.5rem;
 }
 
 #thermometer {
@@ -78,7 +79,7 @@ button {
 
 #wind {
   width: 24px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 #footer {
@@ -124,14 +125,12 @@ button {
 }
 
 .loader {
-  background-image: url('assets/images/loading-walk.gif');
+  background-image: url("assets/images/loading-walk.gif");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 300px;
-  height:300px;
+  height: 300px;
   margin: 0 auto;
 }
-
 
 @keyframes spin {
   0% {
@@ -173,7 +172,8 @@ button {
 }
 
 @keyframes bounce2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) scaleY(1);
   }
   50% {
@@ -181,10 +181,9 @@ button {
   }
 }
 
-
 .button-container {
-    text-align: center;
-    padding-top: 5px;
+  text-align: center;
+  padding-top: 5px;
 }
 
 .modal {
@@ -194,7 +193,7 @@ button {
 }
 
 #especially-spencer {
-  font-size: .5rem;
+  font-size: 0.5rem;
 }
 
 #clock1 {
@@ -226,7 +225,6 @@ button {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
-
 
 /* Media queries for larger screens */
 
@@ -263,4 +261,3 @@ button {
     flex-basis: 100%;
   }
 }
-
