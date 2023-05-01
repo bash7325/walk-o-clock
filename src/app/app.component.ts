@@ -130,6 +130,7 @@ export class AppComponent {
   }
 
   async getWeather() {
+    this.showDropdowns = false;
     if (!this.selectedUser) {
       this.alertTitle = 'Error';
       this.alertMessage = 'Please select a user.';
@@ -164,7 +165,7 @@ export class AppComponent {
         this.recommendation = this.isWalkOClock() ? "It's Walk-O-Clock!" : "It's NOT Walk-O-Clock";
         this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
-        this.showDropdowns = false;
+        
         setTimeout(() => {
           this.isLoading = false;
         }, 4000);
