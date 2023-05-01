@@ -130,7 +130,7 @@ export class AppComponent {
   }
 
   async getWeather() {
-    this.showDropdowns = false;
+
     if (!this.selectedUser) {
       this.alertTitle = 'Error';
       this.alertMessage = 'Please select a user.';
@@ -151,6 +151,8 @@ export class AppComponent {
       return;
     }
 
+    this.showDropdowns = false;
+    
     try {
       this.isLoading = true;
       const position: any = await this.getUserLocation();
