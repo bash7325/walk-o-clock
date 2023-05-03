@@ -131,6 +131,13 @@ button {
   height: 300px;
   margin: 0 auto;
 }
+.walker {
+  background-image: url("assets/images/walking-guy.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 36px;
+  margin: 0 auto;
+}
 
 @keyframes spin {
   0% {
