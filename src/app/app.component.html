@@ -7,32 +7,38 @@
     <p id="loading-text">Loading...</p>
   </div>  
   <h1 *ngIf="showDropdowns" for="error_select">Who are you?</h1>
-  <div *ngIf="showDropdowns" class="nes-select is-error">
-    <select required id="error_select" [(ngModel)]="selectedUser" name="selectedUser">
-      <option value="" disabled selected hidden>Select...</option>
-      <option value="Corey">Corey</option>
-      <option value="Alex">Alex</option>
-      <option value="Ian">Ian</option>
-      <option value="Not a weather wimp">Not a weather wimp</option>
-    </select>
-  </div>
-  <h1 *ngIf="showDropdowns && selectedUser === 'Corey'" for="mood_select">How Ya Feeling??</h1>
-  <div *ngIf="showDropdowns && selectedUser === 'Corey'" class="nes-select is-error">
-    <select required id="mood_select" [(ngModel)]="currentMood" name="currentMood">
-      <option value="" disabled selected hidden>Select...</option>
-      <option value="happy">Happy</option>
-      <option value="neutral">Neutral</option>
-      <option value="sad">Oh bother</option>
-      <option value="sheldonYelled">Sheldon yelled at me</option>
-    </select>
-  </div>
-  <h1 *ngIf="showDropdowns && selectedUser === 'Ian'" for="mood_select">Ride your Motorcycle??</h1>
-  <div *ngIf="showDropdowns && selectedUser === 'Ian'" class="nes-select is-error">
-    <select required id="motorcycle_select" [(ngModel)]="rodeMotorcycle" name="rodeMotorcycle">
-      <option value="" disabled selected hidden>Select...</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
+  <div class="dropdown" style="display: flex;">
+    <div class="walker"></div>
+    <div>
+      <div *ngIf="showDropdowns" class="nes-select is-error">
+        <select required id="error_select" [(ngModel)]="selectedUser" name="selectedUser">
+          <option value="" disabled selected hidden>Select...</option>
+          <option value="Corey">Corey</option>
+          <option value="Alex">Alex</option>
+          <option value="Ian">Ian</option>
+          <option value="Not a weather wimp">Not a weather wimp</option>
+        </select>
+      </div>
+      <h1 *ngIf="showDropdowns && selectedUser === 'Corey'" for="mood_select">How Ya Feeling??</h1>
+      <div *ngIf="showDropdowns && selectedUser === 'Corey'" class="nes-select is-error">
+        <select required id="mood_select" [(ngModel)]="currentMood" name="currentMood">
+          <option value="" disabled selected hidden>Select...</option>
+          <option value="happy">Happy</option>
+          <option value="neutral">Neutral</option>
+          <option value="sad">Oh bother</option>
+          <option value="sheldonYelled">Sheldon yelled at me</option>
+        </select>
+      </div>
+      <h1 *ngIf="showDropdowns && selectedUser === 'Ian'" for="mood_select">Ride your Motorcycle??</h1>
+      <div *ngIf="showDropdowns && selectedUser === 'Ian'" class="nes-select is-error">
+        <select required id="motorcycle_select" [(ngModel)]="rodeMotorcycle" name="rodeMotorcycle">
+          <option value="" disabled selected hidden>Select...</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+    <div class="walker" style="transform: scaleX(-1)"></div>
   </div>
   <div class="button-container">
     <button *ngIf="!showDropdowns && !isLoading" class="nes-btn is-warning" (click)="changeUser()">Change User</button>
