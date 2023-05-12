@@ -73,6 +73,11 @@ button {
   padding-left: 0.5rem;
 }
 
+#ice-cream-icon {
+  width: 30px;
+  padding-left: 0.5rem;
+}
+
 #thermometer {
   width: 32px;
 }
