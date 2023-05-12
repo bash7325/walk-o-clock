@@ -11,6 +11,8 @@ export class AppComponent {
   selectedUser: string = '';
   weatherData: any;
   recommendation: string = '';
+  iceCreamRecommendation: string = '';
+  iceCreamIcon: string = '';
   weatherIcon: string = '';
   walkIcon: string = '';
   currentMood: string = '';
@@ -97,6 +99,10 @@ export class AppComponent {
     }
     return false;
   }
+
+  isIceCreamWeather(): boolean {
+    return this.weatherData.main.temp >= 70 && this.weatherData.weather[0].description.includes('sun');
+  }
   
   getWeatherIcon() {
     const description = this.weatherData.weather[0].description;
@@ -164,14 +170,22 @@ export class AppComponent {
         this.weatherData = data;
         console.log(this.weatherData);
 
+        if (this.isIceCreamWeather()) {
+          this.iceCreamRecommendation = "It's a great day for ice cream!";
+          this.iceCreamIcon = 'assets/icons/pixel-ice.png'
+        } else {
+          this.iceCreamRecommendation = "Ice cream not recommended, grab a different snack";
+          this.iceCreamIcon = 'assets/icons/tear.png'
+        }
+
         this.recommendation = this.isWalkOClock() ? "It's Walk-O-Clock!" : "It's NOT Walk-O-Clock";
         this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
         
         setTimeout(() => {
           this.isLoading = false;
-        }, 4000);
-      }, error => {
+        }, 3000);
+      }, (error: any) => {
         console.error('Error fetching weather data:', error);
       });
     } catch (error) {
