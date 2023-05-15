@@ -101,7 +101,7 @@ export class AppComponent {
   }
 
   isIceCreamWeather(): boolean {
-    return this.weatherData.main.temp >= 70 && !this.weatherData.weather[0].description.includes('cloud');
+    return this.weatherData.main.temp >= 70;
   }
   
   getWeatherIcon() {
