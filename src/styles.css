@@ -63,6 +63,11 @@ button {
   border-color: purple;
 }
 
+#didgeridoo-container {
+  margin-top: .5rem;
+  border-color: turquoise !important;
+}
+
 #recommendation-result {
   margin-top: 0.5rem;
   border-color: orange;
