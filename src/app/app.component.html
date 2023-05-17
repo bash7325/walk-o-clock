@@ -63,6 +63,10 @@
     <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>
     <p id="ice-cream-recommendation"><span>{{ iceCreamRecommendation }}</span><img id="ice-cream-icon" src="{{ iceCreamIcon }}" alt="Ice Cream Icon"></p>
   </section>
+  <section *ngIf="weatherData" class="button-container nes-container">
+    <p id="didgeridoo">Summon the walk-o-clock didgeridoo?</p>
+    <button class="nes-btn is-primary" (click)="playSound()">didgeridoo</button>
+  </section>
 </div>
 </main>
 <footer class="nes-container" id="footer">

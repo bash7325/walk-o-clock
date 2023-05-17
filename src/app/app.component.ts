@@ -103,6 +103,13 @@ export class AppComponent {
   isIceCreamWeather(): boolean {
     return this.weatherData.main.temp >= 70;
   }
+
+  playSound(): void {
+    let audio = new Audio();
+    audio.src = "assets/sounds/didgeridoo.mp3";
+    audio.load();
+    audio.play();
+  }
   
   getWeatherIcon() {
     const description = this.weatherData.weather[0].description;
