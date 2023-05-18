@@ -22,6 +22,7 @@ export class AppComponent {
   showAlert = false;
   showDropdowns= true;
   isLoading = false;
+  isPlaying = false;
 
   hideAlertModal() {
     this.showAlert = false;
@@ -104,11 +105,21 @@ export class AppComponent {
     return this.weatherData.main.temp >= 70;
   }
 
+  audio!: HTMLAudioElement;
+
   playSound(): void {
-    let audio = new Audio();
-    audio.src = "assets/sounds/didgeridoo.mp3";
-    audio.load();
-    audio.play();
+    this.audio = new Audio("assets/sounds/didgeridoo.mp3");
+    this.audio.load();
+    this.audio.play();
+    this.isPlaying = true;
+  }
+  
+  stopSound(): void {
+    if (this.audio) {
+      this.audio.pause();
+      this.audio.currentTime = 0;
+      this.isPlaying = false;
+    }
   }
   
   getWeatherIcon() {

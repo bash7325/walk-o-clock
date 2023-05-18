@@ -65,8 +65,10 @@
   </section>
   <section *ngIf="weatherData" class="button-container nes-container" id="didgeridoo-container">
     <p id="didgeridoo">Summon the walk-o-clock didgeridoo?</p>
-    <button class="nes-btn is-primary" (click)="playSound()">didgeridoo</button>
+    <button *ngIf="!isPlaying" class="nes-btn is-success" (click)="playSound()">didgeridoo</button>
+    <button *ngIf="isPlaying" class="nes-btn is-error" (click)="stopSound()">didgeridon't</button>
   </section>
+  
 </div>
 </main>
 <footer class="nes-container" id="footer">
