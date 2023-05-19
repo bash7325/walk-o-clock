@@ -1,0 +1,8 @@
+{
+	"appId": "com.walkoclock.app",
+	"appName": "walk-o-clock",
+	"webDir": "dist/walk-o-clock",
+	"server": {
+		"androidScheme": "https"
+	}
+}
