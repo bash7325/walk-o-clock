@@ -11,10 +11,10 @@ INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\Android
 	android:name
 		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:28:13-62
 manifest
-ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
+ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
 MERGED from [:capacitor-android] C:\Users\Brandon\Desktop\walk-o-clock\node_modules\@capacitor\android\capacitor\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:capacitor-cordova-android-plugins] C:\Users\Brandon\Desktop\walk-o-clock\android\capacitor-cordova-android-plugins\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Brandon\.gradle\caches\transforms-3\141b5ccf7a1f21001f4879761adaf03b\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -50,20 +50,20 @@ MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Brandon\.gradle\caches\tra
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Brandon\.gradle\caches\transforms-3\7eb067e7b237c01338656a6b15262366\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Brandon\.gradle\caches\transforms-3\f68a1be27f158fd57ffc4cc87f5c3be8\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.apache.cordova:framework:10.1.1] C:\Users\Brandon\.gradle\caches\transforms-3\2f6e1d14db600dd0e74b9f29b8449cbf\transformed\framework-10.1.1\AndroidManifest.xml:20:1-27:12
-INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
-INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
 	package
 		INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-41:12
+		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:1-44:12
 		INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:2:11-69
@@ -125,6 +125,14 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:40:5-67
 	android:name
 		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:40:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:41:5-81
+	android:name
+		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:41:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:42:5-79
+	android:name
+		ADDED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml:42:22-76
 uses-sdk
 INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Brandon\Desktop\walk-o-clock\android\app\src\main\AndroidManifest.xml
