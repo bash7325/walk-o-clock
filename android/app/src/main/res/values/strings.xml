@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">walk-o-clock</string>
-    <string name="title_activity_main">walk-o-clock</string>
-    <string name="package_name">com.walkoclock.app</string>
-    <string name="custom_url_scheme">com.walkoclock.app</string>
-</resources>
