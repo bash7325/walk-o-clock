@@ -2,4 +2,4 @@ Corey and Alex are very particular developers. The office goes on a walk every d
 
 Link to deployed app: https://bash7325.github.io/walk-o-clock/
 
-Future development: Make non mobile views more interesting. Working on converting to an Android app to publish on the Play Store using Capacitor.
+Future development: Make non mobile views more interesting. Android app is ready to go, just waiting on Google to verify me so I can publish.
