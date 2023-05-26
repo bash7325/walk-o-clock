@@ -10,6 +10,7 @@ import { AlertModalComponent } from './modal.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RootComponent } from './root/root.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: 'app', component: AppComponent },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     FormsModule 
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '!' }
+    { provide: APP_BASE_HREF, useValue: '!' },
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [RootComponent]
 })
