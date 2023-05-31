@@ -12,6 +12,6 @@ export class SplashScreenComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.router.navigate(['/app']);
-    }, 5000);  // Set a timeout for 5 seconds
+    }, 2500);  // Set a timeout for 2.5 seconds
   }
 }
