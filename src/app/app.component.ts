@@ -34,6 +34,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   changeUser() {
+    this.stopSound();
     this.showDropdowns = true;
     this.selectedUser = '';
     this.weatherData = null;
@@ -65,7 +66,7 @@ export class AppComponent {
       return true;
     }
   }
-  
+
   isWalkOClockForCorey(temp: number, description: string, mood: string): boolean {
     if (mood === 'happy') {
       return temp >= 60 && temp <= 79;
@@ -79,11 +80,11 @@ export class AppComponent {
       return temp >= 68 && temp <= 79;
     }
   }
-  
+
   isWalkOClockForNotAWeatherWimp(): boolean {
     return true;
   }
-  
+
   isWalkOClock() {
     const temp = Math.round(this.weatherData.main.temp);
     const windSpeed = this.weatherData.wind.speed;
@@ -113,7 +114,7 @@ export class AppComponent {
     this.audio.play();
     this.isPlaying = true;
   }
-  
+
   stopSound(): void {
     if (this.audio) {
       this.audio.pause();
@@ -121,7 +122,7 @@ export class AppComponent {
       this.isPlaying = false;
     }
   }
-  
+
   getWeatherIcon() {
     const description = this.weatherData.weather[0].description;
 
@@ -161,7 +162,7 @@ export class AppComponent {
       this.showAlert = true;
       return;
     }
-  
+
     if (this.selectedUser === 'Corey' && !this.currentMood) {
       this.alertTitle = 'Error';
       this.alertMessage = 'Please select a Corey mood.';
@@ -176,7 +177,7 @@ export class AppComponent {
     }
 
     this.showDropdowns = false;
-    
+
     try {
       this.isLoading = true;
       const position: any = await this.getUserLocation();
@@ -199,7 +200,7 @@ export class AppComponent {
         this.recommendation = this.isWalkOClock() ? "It's Walk-O-Clock!" : "It's NOT Walk-O-Clock";
         this.walkIcon = this.isWalkOClock() ? 'assets/icons/icons8-walking-32.png' : 'assets/icons/icons8-armchair-32.png';
         this.weatherIcon = this.getWeatherIcon();
-        
+
         setTimeout(() => {
           this.isLoading = false;
         }, 3000);

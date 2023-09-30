@@ -5,7 +5,7 @@
   <div *ngIf="isLoading" class="loading-container nes-container">
     <div class="loader"></div>
     <p id="loading-text">Loading...</p>
-  </div>  
+  </div>
   <h1 *ngIf="showDropdowns" for="error_select">Who are you?</h1>
   <div class="dropdown" style="display: flex;">
     <div class="walker"></div>
@@ -46,7 +46,7 @@
   <div class="button-container">
     <button *ngIf="showDropdowns" id="submit" class="nes-btn is-primary" (click)="getWeather()">Submit</button>
   </div>
-  
+
   <app-alert-modal [title]="alertTitle" [message]="alertMessage" [show]="showAlert" (close)="hideAlertModal()"></app-alert-modal>
 
   <div *ngIf="!isLoading">
@@ -56,19 +56,26 @@
     <p id="temperature"><span>Temp: {{ weatherData.main.temp | number:'1.0-0' }}&deg;F</span><img id="thermometer" src="assets/icons/thermo2.png" alt="Thermometer"></p>
     <p id="temperature"><span>Wind: {{ weatherData.wind.speed | number:'1.0-0' }} Mph</span><img id="wind" src="assets/icons/wind64.png" alt="Wind"></p>
     <img *ngIf="selectedUser === 'Corey'" id="corey-mug" src="assets/images/pixel-corey.png">
-    <img *ngIf="selectedUser === 'Alex'" id="alex-mug" src="assets/images/pixel-alex.png">
+    <img *ngIf="selectedUser === 'Alex'" id="alex-mug" src="assets/images/headstone.png">
     <img *ngIf="selectedUser === 'Ian'" id="ian-mug" src="assets/images/pixel-ian.png">
   </section>
   <section *ngIf="weatherData" id="recommendation-result" class="nes-container">
-    <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>
-    <p id="ice-cream-recommendation"><span>{{ iceCreamRecommendation }}</span><img id="ice-cream-icon" src="{{ iceCreamIcon }}" alt="Ice Cream Icon"></p>
+    <ng-container *ngIf="selectedUser === 'Alex'">
+        <p>It's never walk-o-clock for Alex.</p>
+        <p>Picante Alex will be missed.</p>
+    </ng-container>
+
+    <ng-container *ngIf="selectedUser !== 'Alex'">
+      <p id="walk-recommendation"><span>{{ recommendation }}</span><img id="walk-icon" src="{{ walkIcon }}" alt="Walk Icon"></p>
+      <p id="ice-cream-recommendation"><span>{{ iceCreamRecommendation }}</span><img id="ice-cream-icon" src="{{ iceCreamIcon }}" alt="Ice Cream Icon"></p>
+    </ng-container>
   </section>
   <section *ngIf="weatherData" class="button-container nes-container" id="didgeridoo-container">
     <p id="didgeridoo">Summon the walk-o-clock didgeridoo?</p>
     <button *ngIf="!isPlaying" class="nes-btn is-success" (click)="playSound()">didgeridoo</button>
     <button *ngIf="isPlaying" class="nes-btn is-error" (click)="stopSound()">didgeridon't</button>
   </section>
-  
+
 </div>
 </main>
 <footer class="nes-container" id="footer">
